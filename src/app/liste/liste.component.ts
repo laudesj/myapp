@@ -7,11 +7,17 @@ import { HttpService } from '../http.service';
   styleUrls: ['./liste.component.scss']
 })
 export class ListeComponent implements OnInit {
-
+  
+  users: Object;
+  
   constructor(private _http: HttpService) { }
 
   ngOnInit() {
     this._http.maMethode();
+    this._http.getUsers().subscribe(data => {
+      this.users = data;
+      console.log(this.users);
+    })
   }
 
 }
