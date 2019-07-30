@@ -11,11 +11,8 @@
   </p>
 </div>
 
-<!-- <div class="play-container" [style.background-color]="clickCounter > 4 ? 'yellow' : 'lightgray'"> -->
-<div class="play-container" [ngStyle]="{
-    'background-color': clickCounter > 4 ? 'yellow' : 'lightgray',
-    'border':           clickCounter > 4 ? '4px solid black' : 'none'}
-">
+<!-- <div class="play-container" [class.active]="clickCounter > 4"> -->
+<div class="play-container" [ngClass]="setClasses()">
   <ng-template [ngIf]="clickCounter > 4" [ngIfElse]="zero">
     <p>Le nombre au compteur est <strong>plus grand</strong> que 4.</p>
   </ng-template>
