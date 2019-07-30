@@ -10,3 +10,13 @@
     <strong>Vous avez écrit : </strong> {{ nom }}
   </p>
 </div>
+
+<div class="play-container">
+  <ng-template [ngIf]="clickCounter > 4" [ngIfElse]="zero">
+    <p>Le nombre au compteur est <strong>plus grand</strong> que 4.</p>
+  </ng-template>
+
+  <ng-template #zero>
+    <p>Le nombre au compteur est <strong>plus petit ou égal</strong> à 4.</p>
+  </ng-template>
+</div>
